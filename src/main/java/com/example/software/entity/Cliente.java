@@ -8,11 +8,11 @@ import javax.persistence.OneToMany;
 
 import com.example.software.enums.Perfil;
 
+
 @Entity
 public class Cliente extends Pessoa {
 
 	private static final long serialVersionUID = 1L;
-
 	@OneToMany(mappedBy = "cliente")
 	private List<Chamado> chamados = new ArrayList<>();
 
@@ -31,11 +31,6 @@ public class Cliente extends Pessoa {
 	}
 
 	public void setChamados(List<Chamado> chamados) {
-		this.chamados = chamados;
-	}
-
-	public Cliente(Integer id, String nome, String cpf, String email, String senha, List<Chamado> chamados) {
-		super(id, nome, cpf, email, senha);
 		this.chamados = chamados;
 	}
 
